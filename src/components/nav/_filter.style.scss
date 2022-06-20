@@ -15,6 +15,7 @@ div.filter-comp {
   border-radius: .6rem;
   cursor: pointer;
   box-shadow: 0 .1rem 1rem #00000020;
+  transition: background .2s ease-in-out;
 
   &.DARK {
     background: $dark_blue__dark_mode_elements;
@@ -40,9 +41,16 @@ div.filter-comp {
   &.drop {
     & > p.selected-region > span:nth-child(2) {
       transform: scaleY(-1);
+
+      &,
+      & * {
+        transition: color .2s ease-in-out;
+      }
     }
     & > ul.region-container {
       height: 22rem;
+
+      transition: .2s ease-in-out;
 
       & > li.region {
         transform: scaleY(1);
