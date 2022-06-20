@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 
 import './normalize.css'
 import './index.scss'
+import './icons/icomoon/style.css'
 
 import App from './App'
 
