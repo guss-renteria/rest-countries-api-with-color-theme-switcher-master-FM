@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./icomoon.eot?faqrzc');
-  src:  url('./icomoon.eot?faqrzc#iefix') format('embedded-opentype'),
-    url('./icomoon.ttf?faqrzc') format('truetype'),
-    url('./icomoon.woff?faqrzc') format('woff'),
-    url('./icomoon.svg?faqrzc#icomoon') format('svg');
+  src:  url('./icomoon.eot?l19udw');
+  src:  url('./icomoon.eot?l19udw#iefix') format('embedded-opentype'),
+    url('./icomoon.ttf?l19udw') format('truetype'),
+    url('./icomoon.woff?l19udw') format('woff'),
+    url('./icomoon.svg?l19udw#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -30,4 +30,10 @@
 }
 .icon-moon-stroke:before {
   content: "\e901";
+}
+.icon-search:before {
+  content: "\f002";
+}
+.icon-arrow:before {
+  content: "\f107";
 }

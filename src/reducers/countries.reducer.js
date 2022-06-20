@@ -4,11 +4,11 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 const ELEMENTS_PER_PAGE = 10
 
 export const REGIONS = {
-  AMERICA: 'ame',
-  EUROPE: 'eur',
-  ASIA: 'asi',
-  AFRICA: 'afr',
-  OCEANIA: 'oce'
+  America: 'ame',
+  Europe: 'eur',
+  Asia: 'asi',
+  Africa: 'afr',
+  Oceania: 'oce'
 }
 
 // [~]
@@ -24,7 +24,7 @@ export const setCountries = createAsyncThunk(
       const response = await axios.get(`https://restcountries.com/v3.1/region/${ region }`)
       data = response.data
     }
-
+    
     return data
   }
 )

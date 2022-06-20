@@ -1,0 +1,103 @@
+$dark_blue__dark_mode_elements: hsl(209, 23%, 22%);
+$very_dark_blue__dark_mode_background: hsl(207, 26%, 17%);
+$very_dark_blue__light_mode_text: hsl(200, 15%, 8%);
+$dark_gray__light_mode_input: hsl(0, 0%, 52%);
+$very_light_gray__light_mode_background: hsl(0, 0%, 98%);
+$white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
+
+div.filter-comp {
+  width: 100%;
+  max-width: 28rem;
+  padding: 1.8rem;
+
+  position: relative;
+
+  border-radius: .6rem;
+  cursor: pointer;
+  box-shadow: 0 .1rem 1rem #00000020;
+
+  &.DARK {
+    background: $dark_blue__dark_mode_elements;
+    & > p.selected-region {
+      color: $white__dark_mode_text__and__light_mode_elements
+    }
+    & > ul.region-container {
+      background: $dark_blue__dark_mode_elements;
+      color: $white__dark_mode_text__and__light_mode_elements;
+    }
+  }
+  &.LIGHT {
+    background: $white__dark_mode_text__and__light_mode_elements;
+    & > p.selected-region {
+      color: $dark_blue__dark_mode_elements;
+    }
+    & > ul.region-container {
+      background: $white__dark_mode_text__and__light_mode_elements;
+      color: $very_dark_blue__light_mode_text;
+    }
+  }
+
+  &.drop {
+    & > p.selected-region > span:nth-child(2) {
+      transform: scaleY(-1);
+    }
+    & > ul.region-container {
+      height: 22rem;
+
+      & > li.region {
+        transform: scaleY(1);
+      }
+    }
+  }
+
+  & > p.selected-region {
+    font-size: 1.6rem;
+    font-weight: 800;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    user-select: none;
+
+    & > span:nth-child(2) {
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  & > ul.region-container {
+    width: 100%;
+    height: 0;
+    padding: 0 2rem;
+    overflow: hdden;
+
+    list-style: none;
+
+    position: absolute;
+    top: calc(100% + .4rem);
+    left: 0;
+
+    display: grid;
+    border-radius: .6rem;
+    box-shadow: 0 .1rem 1rem #00000020;
+
+    transition: height .2s ease-in-out;
+
+    & > li.region {
+      padding: 1rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform .2s ease;
+
+      &:first-child {
+        margin-top: 1rem;
+      }
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

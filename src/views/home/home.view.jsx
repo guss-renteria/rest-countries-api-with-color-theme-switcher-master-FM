@@ -2,6 +2,10 @@ import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { setCountries } from '../../reducers/countries.reducer.js'
 
+import './_home.style.scss'
+
+import Nav from '../../components/nav/nav.comp.jsx'
+
 const Home = () => {
   const dispatch = useDispatch()
 
@@ -11,7 +15,7 @@ const Home = () => {
 
   return (
     <section className='home-view'>
-      <h1>home</h1>
+      <Nav />
     </section>
   )
 }
