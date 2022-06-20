@@ -10,8 +10,10 @@ const Filter = ({ theme }) => {
   const [filter_by, setFilter] = useState(undefined)
 
   const handleRegion = (region) =>{
-    setFilter(region)
-    dispatch(setCountries(REGIONS[region]))
+    if(filter_by != region) {
+      setFilter(region)
+      dispatch(setCountries(REGIONS[region]))
+    }
   } 
 
   return (
@@ -25,6 +27,7 @@ const Filter = ({ theme }) => {
       </p>
 
       <ul className='region-container'>
+        <li className='region' onClick={ () => handleRegion() } >All</li>
         { Object.keys(REGIONS).map((region, key) => (
           <li
             className='region' key={ key }

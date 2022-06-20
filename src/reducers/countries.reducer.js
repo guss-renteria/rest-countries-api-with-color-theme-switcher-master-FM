@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const ELEMENTS_PER_PAGE = 10
+const ELEMENTS_PER_PAGE = 12
 
 export const REGIONS = {
   America: 'ame',
