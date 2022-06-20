@@ -69,6 +69,9 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
     &:focus {
       outline: none;
     }
+    &::placeholder {
+      user-select: none;
+    }
   }
 
   @media screen and (min-width: 576px) {

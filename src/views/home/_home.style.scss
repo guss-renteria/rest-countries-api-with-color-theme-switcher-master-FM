@@ -6,5 +6,15 @@ $very_light_gray__light_mode_background: hsl(0, 0%, 98%);
 $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
 
 section.home-view {
+  flex: 1;
   padding: 0 6%;
+
+  transition: background .2s ease-in-out;
+
+  &.DARK {
+    background: $very_dark_blue__dark_mode_background;
+  }
+  &.LIGHT {
+    background: $very_light_gray__light_mode_background;
+  }
 }
