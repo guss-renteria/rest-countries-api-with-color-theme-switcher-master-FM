@@ -5,6 +5,8 @@ $dark_gray__light_mode_input: hsl(0, 0%, 52%);
 $very_light_gray__light_mode_background: hsl(0, 0%, 98%);
 $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
 
+$thumb: linear-gradient(0deg, hsl(209, 23%, 22%) 0%, hsl(0, 0%, 52%) 100%);
+
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +17,25 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
 }
 html {
   font-size: .625rem;
+
+  ::-webkit-scrollbar {
+    width: 1.4rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $dark_gray__light_mode_input;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $thumb;
+    border-radius: .2rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  }
 }
 h1, h2, h3, h4, h5, h6 {
   margin: 0;

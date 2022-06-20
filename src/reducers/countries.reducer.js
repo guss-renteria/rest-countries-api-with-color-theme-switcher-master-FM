@@ -41,6 +41,11 @@ export const countriesSlice = createSlice({
   },
 
   reducers: {
+    resetList: (state) => {
+      state.all = []
+      state.listed.page = 0
+      state.listed.data = []
+    },
     addPageList: (state) => {
       const limit = ELEMENTS_PER_PAGE * (state.listed.page + 1)
 
@@ -61,6 +66,6 @@ export const countriesSlice = createSlice({
   },
 })
 
-export const { addPageList } = countriesSlice.actions
+export const { resetList, addPageList } = countriesSlice.actions
 
 export default countriesSlice.reducer

@@ -9,7 +9,7 @@ div.item-comp{
   border-radius: .6rem;
   overflow: hidden;
   box-shadow: 0 .1rem 1rem #00000020;
-  transition: background .2s ease-in-out;
+  transition: .2s ease-in-out;
 
   &.DARK {
     background: $dark_blue__dark_mode_elements;
@@ -30,12 +30,17 @@ div.item-comp{
     }
   }
 
+  &:hover {
+    transform: scale(1.01);
+  }
+
   & > .flag {
     width: 100%;
     display: block;
     max-height: 32rem;
     overflow: hidden;
     object-fit: cover;
+    user-select: none;
   }
 
   & > .data {
@@ -46,6 +51,10 @@ div.item-comp{
       margin-bottom: 2rem;
 
       transition: color .2s ease-in-out;
+
+      &::selection {
+        background: #00000020;
+      }
     }
 
     & > p {
@@ -53,6 +62,12 @@ div.item-comp{
       font-size: 1.5rem;
 
       transition: color .2s ease-in-out;
+
+      &::selection,
+      &>span::selection,
+      &>b::selection {
+        background: #00000028;
+      }
 
       & > b {
         font-weight: 600;

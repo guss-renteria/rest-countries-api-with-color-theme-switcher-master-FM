@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { REGIONS, setCountries } from '../../reducers/countries.reducer'
+import { REGIONS, setCountries, resetList } from '../../reducers/countries.reducer'
 
 import './_filter.style.scss'
 
@@ -12,6 +12,7 @@ const Filter = ({ theme }) => {
   const handleRegion = (region) =>{
     if(filter_by != region) {
       setFilter(region)
+      dispatch(resetList())
       dispatch(setCountries(REGIONS[region]))
     }
   } 
