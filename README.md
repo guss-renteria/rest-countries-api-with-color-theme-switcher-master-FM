@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor]()
-- Live Site URL: [Vercel]()
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/rest-countries-api-with-react-redux-reactrouter-axios-sass-vite-CYTLNobR05)
+- Live Site URL: [Vercel](https://rest-countries-api-with-color-theme-switcher-master-fm.vercel.app/)
 
 ## My process
 
