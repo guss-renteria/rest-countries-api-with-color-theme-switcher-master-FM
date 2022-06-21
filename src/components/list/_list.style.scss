@@ -2,8 +2,8 @@ div.list-comp {
   padding: 2rem 2rem 10rem;
 
   display: grid;
-  gap: 10rem;
-  grid-template-columns: repeat(auto-fill, minmax(28rem , 1fr));
+  gap: 8.8rem;
+  grid-template-columns: repeat(auto-fill, minmax(22rem , 1fr));
 
   @media screen and (min-width: 768px) {
     padding-left: 0;
