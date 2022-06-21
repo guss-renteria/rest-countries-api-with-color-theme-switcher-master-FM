@@ -12,6 +12,13 @@ export const REGIONS = {
 }
 
 // [~]
+export const fill = createAsyncThunk(
+  'countries/fill',
+  async () => {
+    const response = await axios.get('https://restcountries.com/v3.1/all')
+    return response.data
+  }
+)
 export const setCountries = createAsyncThunk(
   'countries/all',
   async (region) => {
@@ -37,6 +44,7 @@ export const countriesSlice = createSlice({
 
   initialState: {
     all: [],
+    list: [],
     listed: {
       filter: undefined,
       page: 0,
@@ -46,27 +54,30 @@ export const countriesSlice = createSlice({
 
   reducers: {
     resetList: (state) => {
-      state.all = []
+      state.list = []
       state.listed.page = 0
       state.listed.data = []
     },
     addPageList: (state) => {
       const limit = ELEMENTS_PER_PAGE * (state.listed.page + 1)
 
-      if(limit <= state.all.length) {
+      if(limit <= state.list.length) {
         state.listed.page += 1
-        state.listed.data = state.all.slice(0, limit)
+        state.listed.data = state.list.slice(0, limit)
       }
     }
   },
 
   extraReducers: (builder) => {
     builder.addCase(setCountries.fulfilled, (state, action) => {
-      state.all = action.payload.data
+      state.list = action.payload.data
 
       state.listed.page = 1
       state.listed.filter = action.payload.region
       state.listed.data = action.payload.data.slice(0, ELEMENTS_PER_PAGE * state.listed.page)
+    })
+    builder.addCase(fill.fulfilled, (state, action) => {
+      state.all = action.payload
     })
   },
 })

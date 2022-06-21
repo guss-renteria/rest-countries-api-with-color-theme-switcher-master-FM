@@ -9,6 +9,7 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
   width: 100%;
   max-width: 48rem;
 
+  z-index: 99;
   position: relative;
   border-radius: .6rem;
 
@@ -29,6 +30,12 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
         opacity: 1;
       }
     }
+    & > .search-result {
+      background: $dark_blue__dark_mode_elements;
+      & > a {
+        color: $white__dark_mode_text__and__light_mode_elements;
+      }
+    }
   }
   &.LIGHT {
     background: $white__dark_mode_text__and__light_mode_elements;
@@ -40,6 +47,12 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
 
       &::placeholder {
         opacity: 1;
+      }
+    }
+    & > .search-result {
+      background: $white__dark_mode_text__and__light_mode_elements;
+      & > a {
+        color: $dark_gray__light_mode_input;
       }
     }
   }
@@ -71,6 +84,58 @@ $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
     }
     &::placeholder {
       user-select: none;
+    }
+  }
+
+  & > input.in-search:valid ~ .search-result,
+  & > input.in-search:focus ~ .search-result {
+    height: auto;
+    max-height: 20rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    opacity: 1;
+
+    &::-webkit-scrollbar {
+      width: .8rem;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: .2rem;
+    }
+  }
+  & > .search-result {
+    width: 100%;
+    opacity: 0;
+    height: 0;
+
+    border-radius: .6rem;
+    box-shadow: 0 .1rem 1rem #00000020;
+    position: absolute;
+    top: calc(100% + .4rem);
+
+    transition: opacity .2s ease-in-out;
+
+    & > a {
+      display: block;
+      text-decoration: none;
+
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+
+      &:focus {
+        outline: none;
+        text-shadow: 0 0 .4rem #ffffff80;
+        transform: scale(1.01);
+        font-weight: 600;
+        background: #ffffff10;
+      }
+
+      &:first-child {
+        margin-top: 1rem;
+      }
+      &:last-child {
+        margin-bottom: 1rem;
+      }
     }
   }
 

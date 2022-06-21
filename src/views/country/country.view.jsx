@@ -32,7 +32,6 @@ const Country = () => {
 
       setBorders(_borders)
       setData(response.data[0])
-      console.log(response.data[0])
     }
     _get()
   }, [location])

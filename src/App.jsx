@@ -1,7 +1,7 @@
 import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { setCountries } from './reducers/countries.reducer.js'
+import { fill, setCountries } from './reducers/countries.reducer.js'
 
 
 import Header from './components/header/header.comp.jsx'
@@ -15,6 +15,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(fill())
     dispatch(setCountries())
   }, [])
 
