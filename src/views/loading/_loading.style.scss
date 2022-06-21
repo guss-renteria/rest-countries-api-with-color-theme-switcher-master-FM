@@ -1,0 +1,34 @@
+$dark_blue__dark_mode_elements: hsl(209, 23%, 22%);
+$very_dark_blue__dark_mode_background: hsl(207, 26%, 17%);
+$very_dark_blue__light_mode_text: hsl(200, 15%, 8%);
+$dark_gray__light_mode_input: hsl(0, 0%, 52%);
+$very_light_gray__light_mode_background: hsl(0, 0%, 98%);
+$white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
+
+section.loading-view {
+  flex: 1;
+
+  display: grid;
+  place-items: center;
+
+  transition: background .2s ease-in-out;
+
+  &.DARK {
+    background: $very_dark_blue__dark_mode_background;
+    & > h1 {
+      color: $white__dark_mode_text__and__light_mode_elements;
+    }
+  }
+  &.LIGHT {
+    background: $very_light_gray__light_mode_background;
+    & > h1 {
+      color: $very_dark_blue__light_mode_text
+    }
+  }
+
+  & > h1 {
+    font-size: 2.4rem;
+    letter-spacing: .2em;
+    transition: color .2 ease-in-out;
+  }
+}
