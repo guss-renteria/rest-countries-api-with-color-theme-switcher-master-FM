@@ -25,7 +25,10 @@ export const setCountries = createAsyncThunk(
       data = response.data
     }
     
-    return data
+    return {
+      data,
+      region
+    }
   }
 )
 //
@@ -35,6 +38,7 @@ export const countriesSlice = createSlice({
   initialState: {
     all: [],
     listed: {
+      filter: undefined,
       page: 0,
       data: [],
     },
@@ -58,10 +62,11 @@ export const countriesSlice = createSlice({
 
   extraReducers: (builder) => {
     builder.addCase(setCountries.fulfilled, (state, action) => {
-      state.all = action.payload
+      state.all = action.payload.data
 
       state.listed.page = 1
-      state.listed.data = action.payload.slice(0, ELEMENTS_PER_PAGE * state.listed.page)
+      state.listed.filter = action.payload.region
+      state.listed.data = action.payload.data.slice(0, ELEMENTS_PER_PAGE * state.listed.page)
     })
   },
 })

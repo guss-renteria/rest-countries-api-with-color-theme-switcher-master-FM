@@ -1,5 +1,8 @@
-import { Suspense, lazy } from 'react'
+import { Suspense, lazy, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setCountries } from './reducers/countries.reducer.js'
+
 
 import Header from './components/header/header.comp.jsx'
 import Loading from './views/loading/loading.view'
@@ -9,6 +12,12 @@ const HomeView = lazy(() => import('./views/home/home.view'))
 const CountryView = lazy(() => import('./views/country/country.view'))
 
 function App() {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(setCountries())
+  }, [])
+
   return (
    <Router>
       <Header>

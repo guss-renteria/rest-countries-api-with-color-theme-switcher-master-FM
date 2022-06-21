@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { REGIONS, setCountries, resetList } from '../../reducers/countries.reducer'
 
 import './_filter.style.scss'
@@ -7,13 +7,14 @@ import './_filter.style.scss'
 const Filter = ({ theme }) => {
   const dispatch = useDispatch()
   const [is_drop, setDrop] = useState(false)
-  const [filter_by, setFilter] = useState(undefined)
+  const filter = useSelector(state => state.countries.listed.filter)
+  const [filter_by, setFilter] = useState(filter)
 
   const handleRegion = (region) =>{
     if(filter_by != region) {
-      setFilter(region)
       dispatch(resetList())
-      dispatch(setCountries(REGIONS[region]))
+      dispatch(setCountries(region))
+      setFilter(region)
     }
   } 
 

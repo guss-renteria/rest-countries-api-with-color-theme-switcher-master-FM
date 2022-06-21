@@ -1,6 +1,9 @@
 .nav-comp {
   padding: 4rem 0;
 
+  z-index: 999;
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
