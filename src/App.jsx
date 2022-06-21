@@ -6,6 +6,7 @@ import Loading from './views/loading/loading.view'
 import NotFound from './views/not_found/not_found.view'
 
 const HomeView = lazy(() => import('./views/home/home.view'))
+const CountryView = lazy(() => import('./views/country/country.view'))
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Suspense fallback={ <Loading /> }>
           <Routes>
             <Route path='/' element={ <HomeView /> }/>
+            <Route path='/country/:code' element={ <CountryView /> }/>
             <Route path='*' element={ <NotFound /> }/>
           </Routes>
         </Suspense>

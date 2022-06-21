@@ -5,10 +5,12 @@ $dark_gray__light_mode_input: hsl(0, 0%, 52%);
 $very_light_gray__light_mode_background: hsl(0, 0%, 98%);
 $white__dark_mode_text__and__light_mode_elements: hsl(0, 0%, 100%);
 
-div.item-comp{
+a.item-comp{
+  display: block;
   border-radius: .6rem;
   overflow: hidden;
   box-shadow: 0 .1rem 1rem #00000020;
+  text-decoration: none;
   transition: .2s ease-in-out;
 
   &.DARK {
